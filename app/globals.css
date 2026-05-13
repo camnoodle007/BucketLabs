@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #050a18;
+  --color-foreground: #edf2fc;
+  --color-muted: #8a9bc2;
+  --color-dim: #4a5a80;
+  --color-card: #0c1530;
+  --color-card-hover: #111d40;
+  --color-border: rgba(80, 140, 255, 0.12);
+  --color-border-hover: rgba(80, 140, 255, 0.35);
+  --color-primary: #4d8eff;
+  --color-primary-bright: #79b4ff;
+  --color-accent-ai: #4d8eff;
+  --color-accent-ai-bright: #79b4ff;
+  --color-accent-mymir: #a855f7;
+  --color-accent-mymir-bright: #c084fc;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-instrument-serif);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Gradient text utility */
+.text-gradient-mixed {
+  background: linear-gradient(135deg, #4d8eff 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Globe animations */
+@keyframes globe-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.8); }
+}
+
+@keyframes arc-pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.35; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}

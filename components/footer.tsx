@@ -15,7 +15,7 @@ export function Footer() {
         </a>
       </div>
       <p className="text-dim text-xs">
-        &copy; 2026 Bucket Labs. All rights reserved.
+        &copy; 2026 Bucket Labs Inc. All rights reserved.
       </p>
     </footer>
   );

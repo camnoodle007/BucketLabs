@@ -19,14 +19,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bucket Labs — Where AI Meets Deep Science",
+  title: "Bucket Labs — Where AI Meets Science",
   description:
-    "Bucket Labs builds AI-powered platforms that solve the hardest problems in materials science and knowledge management. Explore BucketLabs.ai and Mymir.ai.",
+    "Bucket Labs builds AI for crystal growth and for the knowledge a team already has. Explore BucketLabs.ai and Mymir.ai.",
   keywords: [
     "Bucket Labs",
     "AI",
-    "deep science",
-    "cognitive simulation",
+    "science",
+    "crystal growth",
+    "predictive maintenance",
+    "thermocouple drift",
     "knowledge management",
     "crystal manufacturing",
     "Mymir",
@@ -34,17 +36,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Bucket Labs" }],
   openGraph: {
-    title: "Bucket Labs — Where AI Meets Deep Science",
+    title: "Bucket Labs — Where AI Meets Science",
     description:
-      "AI-powered platforms for materials science and knowledge management.",
+      "AI for crystal growth, and for the knowledge a team already has.",
     type: "website",
     siteName: "Bucket Labs",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bucket Labs — Where AI Meets Deep Science",
+    title: "Bucket Labs — Where AI Meets Science",
     description:
-      "AI-powered platforms for materials science and knowledge management.",
+      "AI for crystal growth, and for the knowledge a team already has.",
   },
 };
 

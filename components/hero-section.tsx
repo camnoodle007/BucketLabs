@@ -1,16 +1,9 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
 import { Globe } from "./globe";
 
+// Server-rendered: the entrance is a CSS animation, so the headline paints with
+// the document instead of waiting for hydration.
+
 export function HeroSection() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <section className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden px-6 pt-32 pb-16">
       {/* Grid background */}
@@ -28,50 +21,51 @@ export function HeroSection() {
       {/* Globe */}
       <Globe />
 
+      {/* Keeps the headline readable where it crosses the dots */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 42% 30% at 50% 45%, rgba(5,10,24,0.88), rgba(5,10,24,0) 72%)",
+        }}
+      />
+
       {/* Headline */}
-      <h1
-        className={`font-display text-[clamp(3.5rem,9vw,7rem)] leading-[1.0] tracking-[-0.04em] max-w-[800px] relative z-10 transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
+      <h1 className="fade-in font-display text-[clamp(3.5rem,9vw,7rem)] leading-[1.02] tracking-[0.012em] max-w-[800px] relative z-10">
         Where AI Meets
         <br />
-        <span className="text-gradient-mixed">Deep Science</span>
+        <span className="text-gradient-mixed">Science</span>
       </h1>
 
       {/* Subtitle */}
       <p
-        className={`text-lg text-muted max-w-[520px] mt-10 mb-14 leading-relaxed relative z-10 transition-all duration-700 delay-150 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        }`}
+        className="fade-in text-lg text-muted max-w-[480px] mt-10 mb-14 leading-relaxed relative z-10"
+        style={{ animationDelay: "150ms" }}
       >
-        Bucket Labs builds AI-powered platforms that solve the hardest problems
-        in materials science and knowledge management.
+        We build AI for crystal growth, and for the knowledge a team already
+        has.
       </p>
 
       {/* CTA Buttons */}
       <div
-        className={`flex gap-5 relative z-10 max-md:flex-col max-md:items-center transition-all duration-700 delay-300 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        }`}
+        className="fade-in flex gap-5 relative z-10 max-md:flex-col max-md:items-center"
+        style={{ animationDelay: "300ms" }}
       >
         <a
           href="https://bucketlabs.ai"
           target="_blank"
           rel="noopener noreferrer"
-          className="group px-8 py-4 bg-gradient-to-r from-accent-ai to-[#2563eb] text-white font-semibold rounded-xl flex items-center gap-2.5 shadow-[0_4px_25px_rgba(77,142,255,0.35)] hover:shadow-[0_6px_35px_rgba(77,142,255,0.5)] hover:-translate-y-0.5 transition-all"
+          className="px-9 py-3.5 rounded-full bg-accent-ai/[0.14] text-accent-ai-bright text-[0.95rem] font-medium ring-1 ring-accent-ai/30 backdrop-blur-sm hover:bg-accent-ai/25 hover:ring-accent-ai/50 hover:-translate-y-0.5 transition-all duration-300"
         >
           BucketLabs.ai
-          <ArrowRight className="w-[18px] h-[18px] transition-transform group-hover:translate-x-1" />
         </a>
         <a
           href="https://mymir.ai"
           target="_blank"
           rel="noopener noreferrer"
-          className="group px-8 py-4 bg-gradient-to-r from-accent-mymir to-[#7c3aed] text-white font-semibold rounded-xl flex items-center gap-2.5 shadow-[0_4px_25px_rgba(168,85,247,0.35)] hover:shadow-[0_6px_35px_rgba(168,85,247,0.5)] hover:-translate-y-0.5 transition-all"
+          className="px-9 py-3.5 rounded-full bg-accent-mymir/[0.14] text-accent-mymir-bright text-[0.95rem] font-medium ring-1 ring-accent-mymir/30 backdrop-blur-sm hover:bg-accent-mymir/25 hover:ring-accent-mymir/50 hover:-translate-y-0.5 transition-all duration-300"
         >
           Mymir.ai
-          <ArrowRight className="w-[18px] h-[18px] transition-transform group-hover:translate-x-1" />
         </a>
       </div>
     </section>

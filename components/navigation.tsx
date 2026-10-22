@@ -31,27 +31,25 @@ export function Navigation() {
         />
       </a>
 
-      <ul className="hidden md:flex items-center gap-10">
-        {["Products", "Innovation"].map((link) => (
-          <li key={link}>
-            <a
-              href={`#${link.toLowerCase()}`}
-              className="text-muted text-sm font-medium hover:text-foreground transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-accent-ai after:to-accent-mymir after:transition-all hover:after:w-full"
-            >
-              {link}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <a
-        href="https://bucketlabs.ai"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-5 py-2.5 bg-gradient-to-r from-accent-ai to-[#2563eb] text-white text-sm font-semibold rounded-lg shadow-[0_0_20px_rgba(77,142,255,0.3)] hover:shadow-[0_0_30px_rgba(77,142,255,0.5)] hover:-translate-y-0.5 transition-all"
-      >
-        Explore Products
-      </a>
+      {/* The two products are the only places to go, so they are the whole menu. */}
+      <div className="flex items-center gap-6 sm:gap-8">
+        <a
+          href="https://bucketlabs.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted text-sm font-medium hover:text-accent-ai-bright transition-colors"
+        >
+          BucketLabs.ai
+        </a>
+        <a
+          href="https://mymir.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted text-sm font-medium hover:text-accent-mymir-bright transition-colors"
+        >
+          Mymir.ai
+        </a>
+      </div>
     </nav>
   );
 }
